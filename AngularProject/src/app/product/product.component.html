@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"></script>
+</head>
+<body>
+
+<!-- <nav class="navbar navbar-light bg-primary">
+  <div class="container-fluid">
+    <h1 style="color:aliceblue">Angular CRUD</h1>
+    <div class="d-flex">
+      <button type="button" (click)="clickAddProduct()" data-toggle="modal" data-target="#exampleModal" class="btn btn-success">
+        Add Employee
+      </button>
+    </div>
+  </div>
+</nav> -->
+
+<div class="container">
+  <div class="container-fluid">
+    <div class="d-flex">
+      <button type="button" (click)="clickAddProduct()" data-toggle="modal" data-target="#exampleModal" class="btn btn-success">
+        Add Employee
+      </button>
+    </div>
+  </div>
+<div class="table-responsive">
+<table class="table mt-3 table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Employee ID</th>
+      <th scope="col">product Name </th>
+      <th scope="col">product Size </th>
+      <th scope="col">product Price</th>
+      <th scope="col">productImage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of employeeData">
+      <td>{{data.id}}</td>
+      <td>{{data.productName}}</td>
+      <td>{{data.productSize}}</td>
+      <td>{{data.productPrice}}</td>
+      <td>{{data.productImage}}</td>
+      <td>
+        <button type="button" (click)="onEdit(data)" data-toggle="modal" data-target="#exampleModal"  class="btn btn-info">Edit</button>
+        <button  class="btn btn-danger mx-3" (click)="deleteProduct(data)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Employee Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formValue">
+          <div class="mb-3">
+            <label for="firstname" class="form-label">product Name </label>
+            <input type="text" class="form-control" id="firstname" formControlName="productName" placeholder="Enter First Name">
+            <span class="text-danger" *ngIf="formValue.controls['productName'].dirty && formValue.hasError('required','productName')">First name is required</span>
+          </div>
+          <div class="mb-3">
+            <label for="lastname" class="form-label">productSize </label>
+            <input type="text" class="form-control" id="lastname" formControlName="productSize" placeholder="Enter Prodcut Size ">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">product Price</label>
+            <input type="text" class="form-control" id="email" formControlName="productPrice" placeholder="Enter Product Price">
+          </div>
+          <div class="mb-3">
+            <label for="contact" class="form-label">product Image </label>
+            <input type="text" class="form-control" id="contact" formControlName="productImage" placeholder="Enter Mobile no">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="cancel" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" *ngIf="showAdd" (click)="postProductDetails()" class="btn btn-primary">Add </button>
+        <button type="button" *ngIf="showUpdate" (click)="updateProductDetails()" class="btn btn-primary">Update </button>
+
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

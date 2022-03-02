@@ -38,45 +38,40 @@
                   <td >{{email}}</td>
 
                 </tr>
-                <tr>
+                <!-- <tr>
                   <th scope="row">Customer Phone no:</th>
                   <td >{{contact}}</td>
-                </tr>
+                </tr> -->
 
                 <!-- <tr>
                   <th scope="row">Pizza Quantity</th>
                   <td></td>
               </tr> -->
+              <!-- <tr *ngFor="let product of products">
+                <th scope="row">product</th>
+                <td>{{product.productName}}</td>
+            </tr> -->
 
-                <tr>
-                    <th scope="row">Subtotal</th>
-                    <td>500</td>
-                </tr>
-
-                <tr>
-                  <th scope="row">Delivery Fee</th>
-                  <td>50 Rs</td>
-              </tr>
-
-                <tr>
-                  <th scope="row">Taxes and Charges</th>
-                  <td>50 Rs</td>
-              </tr>
 
               <tr>
                   <th scope="row">Grand Total</th>
-                  <td>600</td>
+                  <td>{{grandTotal}}</td>
               </tr>
+              <!-- <tr>
+                <th scope="row">Address</th>
+                <td><input type="text" id="userAddress" formControlName="userAddress"></td>
+            </tr> -->
+
               </tbody>
             </table>
-
-
+            <div>
 
 
             <button [routerLink]="['/userhome']" class="btn btn--pill btn--green" type="submit" style="margin-left: 100px ;">Shop More</button>
-            <button (click)="placeorder()" class="btn btn--pill btn--green" type="submit" style="margin-left: 120px;">Place order</button>
+            <button  (click)="placeorder()" class="btn btn--pill btn--green" type="submit" style="margin-left: 120px;">Place order</button>
 
 
+        </div>
         </div>
       </div>
     </div>

@@ -35,6 +35,7 @@ import { CheckoutComponent } from './user/checkout/checkout.component';
 import { MyProfileComponent } from './user/my-profile/my-profile.component';
 import { ProductComponent } from './user/product/product.component';
 import { EditProfileComponent } from './user/edit-profile/edit-profile.component';
+import { OrderComponent } from './user/order/order.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import { EditProfileComponent } from './user/edit-profile/edit-profile.component
      CheckoutComponent,
      MyProfileComponent,
      ProductComponent,
-     EditProfileComponent
+     EditProfileComponent,
+     OrderComponent
   ],
   imports: [
     HttpClientModule,

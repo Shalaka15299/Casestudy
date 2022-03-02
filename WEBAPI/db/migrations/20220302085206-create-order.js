@@ -14,9 +14,6 @@ module.exports = {
       userName: {
         type: Sequelize.STRING
       },
-      userAddress: {
-        type: Sequelize.STRING
-      },
       paymentMode: {
         type: Sequelize.STRING
       },

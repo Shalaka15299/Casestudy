@@ -42,7 +42,7 @@ exports.createOrder=(req,resp)=>{
     const newOrder={
         userid:req.body.userid,
         userName:req.body.userName,
-        userAddress:req.body.userAddress,
+        // userAddress:req.body.userAddress,
         paymentMode:req.body.paymentMode,  
         grandTotal:req.body.grandTotal,   
         orderStatus:req.body.orderStatus,   

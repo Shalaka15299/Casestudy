@@ -5,7 +5,7 @@ module.exports = {
     await queryInterface.bulkInsert('Orders', [{
       userid: 35,
       userName:'Shalaka',
-      userAddress:'Panvel',
+      // userAddress:'Panvel',
       paymentMode:'COD',
       grandTotal:500,
       orderStatus:'order placed',

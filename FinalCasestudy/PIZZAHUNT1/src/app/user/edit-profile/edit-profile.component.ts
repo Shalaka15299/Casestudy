@@ -18,6 +18,7 @@ export class EditProfileComponent implements OnInit {
   public new:any;
   public editProfileObj: any;
 
+
 constructor(private router: Router, private authService: AuthService) { }
 
 ngOnInit(): void {
@@ -73,7 +74,7 @@ enable()
 change() {
   localStorage.setItem('userid',this.id);
 
-  this.authService.reset(JSON.stringify({"id":this.id,"userEmail":this.email,"userName": this.name,"Phone" : this.contact})).subscribe(
+  this.authService.editprofile(JSON.stringify({"id":this.id,"userEmail":this.email,"userName": this.name,"Phone" : this.contact})).subscribe(
     data => {
       console.log(data);
 
